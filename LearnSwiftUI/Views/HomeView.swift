@@ -13,7 +13,7 @@ struct HomeView: View {
         NavigationView {
             VStack {
                 Text("Home")
-                    .font(.title)
+                    .font(.largeTitle)
                 ScrollView {
                     HStack {
                         Image(systemName: "globe")

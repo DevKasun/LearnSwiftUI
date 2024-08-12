@@ -11,7 +11,7 @@ struct SecondView: View {
     var body: some View {
         VStack {
             Text("Second page")
-                .font(.title)
+                .font(.largeTitle)
             ScrollView {
                 HStack {
                     Image(systemName: "globe")
