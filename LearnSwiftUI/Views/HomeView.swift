@@ -9,30 +9,40 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        
-        NavigationView {
-            VStack {
-                Text("Home")
-                    .font(.largeTitle)
-                ScrollView {
-                    HStack {
-                        Image(systemName: "globe")
-                            .imageScale(.large)
-                            .foregroundStyle(.tint)
-                        Text("Hello, world!")
-                    }
-                    
-                    NavigationLink(destination: SecondView(), label: {
-                        Text("Goto 2nd screen")
-                            .padding(10)
-                            .background(Color.black)
-                            .foregroundColor(Color.white)
-                            .cornerRadius(8.0)
-                    })
-                }
-            }
-            .padding()
+        VStack(alignment: .trailing, spacing: 16, content: {
+            Rectangle()
+                .fill(Color.red)
+                .frame(width: 150, height: 150)
+            Rectangle()
+                .fill(Color.blue)
+                .frame(width: 125,height: 125)
+            Rectangle()
+                .fill(Color.green)
+                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 100)
+        }).frame(width: .infinity)
+        HStack(alignment: .bottom, content: {
+            Rectangle()
+                .fill(Color.red)
+                .frame(width: 150, height: 150)
+            Rectangle()
+                .fill(Color.blue)
+                .frame(width: 125,height: 125)
+            Rectangle()
+                .fill(Color.green)
+                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 100)
+        })
+        ZStack{
+            Rectangle()
+                .fill(Color.red)
+                .frame(width: 150, height: 150)
+            Rectangle()
+                .fill(Color.blue)
+                .frame(width: 125,height: 125)
+            Rectangle()
+                .fill(Color.green)
+                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 100)
         }
+
     }
 }
 
