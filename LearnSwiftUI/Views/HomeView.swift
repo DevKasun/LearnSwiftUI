@@ -8,30 +8,51 @@
 import SwiftUI
 
 struct HomeView: View {
+        
+    @State private var email = ""
+    @State private var password = ""
+    
     var body: some View {
         
         NavigationView {
-            VStack {
-                Text("Home")
-                    .font(.largeTitle)
-                ScrollView {
-                    HStack {
-                        Image(systemName: "globe")
-                            .imageScale(.large)
-                            .foregroundStyle(.tint)
-                        Text("Hello, world!")
-                    }
+            ZStack {
+                Image("witch")
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+                
+                Color.black.opacity(0.5)
+                        .edgesIgnoringSafeArea(.all)
+                
+                VStack(alignment: .center, spacing: 0) {
+                    Text("Sign in")
+                        .font(.title)
+                        .background(Color.green)
+                        .fontWeight(.bold)
+                        .foregroundStyle(Color.white)
+                        .padding()
                     
-                    NavigationLink(destination: SecondView(), label: {
-                        Text("Goto 2nd screen")
-                            .padding(10)
-                            .background(Color.black)
-                            .foregroundColor(Color.white)
-                            .cornerRadius(8.0)
-                    })
+                    
+                    VStack(alignment: .center, spacing: 10) {
+                        TextField("Name", text: $email)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding()
+                        
+                        TextField("Email", text: $password)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding()
+                        
+                        Button("Login") {}
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                    }
+                    .background(Color.red)
+                    .padding()
                 }
+                .padding()
             }
-            .padding()
         }
     }
 }
